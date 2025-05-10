@@ -1,0 +1,180 @@
+/* Internet Computer Theme Colors */
+:root {
+  --icp-dark-purple: #16003d;
+  --icp-sidebar-bg: #1a1a23;
+  --icp-light-purple: #7e6beb;
+  --icp-gradient-purple: #2f0158;
+  --icp-bright-pink: #ff3395;
+  --icp-orange: #ff7f41;
+  --icp-crab: #ff4f4a;
+  --icp-light-blue: #bbdefb;
+}
+
+/* Body and main content area */
+body {
+  color: white !important;
+}
+
+.content {
+  background-color: var(--icp-dark-purple) !important;
+}
+
+/* Sidebar styling */
+#sidebar,
+.drac-bg-black {
+  background-color: var(--icp-sidebar-bg) !important;
+  border-right: none !important;
+}
+
+/* Header navbar styling - light purple */
+.navbar,
+.drac-bg-purple {
+  background: var(--icp-light-purple) !important;
+  background-image: none !important;
+}
+
+/* Main content area */
+.section-content {
+  background-color: var(--icp-dark-purple) !important;
+}
+
+/* Links */
+a {
+  color: var(--icp-bright-pink) !important;
+}
+
+a:hover {
+  color: #ff75d5 !important;
+  text-decoration: none;
+}
+
+/* Header elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--icp-light-purple) !important;
+}
+
+/* Navigation elements */
+.drac-anchor:hover,
+.drac-anchor-secondary:hover,
+.drac-text-purple--hover:hover {
+  color: var(--icp-bright-pink) !important;
+}
+
+/* Active navigation */
+.active {
+  color: var(--icp-bright-pink) !important;
+}
+
+/* Code blocks */
+.hljs,
+pre {
+  background-color: rgba(22, 0, 61, 0.7) !important;
+}
+
+/* Navigation header */
+.divider.drac-bg-purple-cyan {
+  background: linear-gradient(
+    to bottom,
+    var(--icp-light-purple),
+    var(--icp-light-blue)
+  ) !important;
+}
+
+/* Footer */
+.drac-bg-cyan-green {
+  background-color: var(--icp-light-blue) !important;
+}
+
+/* Buttons */
+.btn-preview.drac-btn-outline {
+  border-color: white !important;
+  color: white !important;
+}
+
+.btn-preview.drac-btn-outline:hover {
+  border-color: var(--icp-bright-pink) !important;
+  color: var(--icp-bright-pink) !important;
+}
+
+/* Previous/Next buttons */
+.navbar .btn-preview {
+  background-color: transparent !important;
+}
+
+/* Icons */
+.fa-arrow-right,
+.fa-arrow-left {
+  color: white !important;
+}
+
+/* Emoji styling */
+h1 img,
+h2 img,
+h3 img {
+  display: inline !important;
+}
+
+/* Table of contents */
+.dot-ul .dot-li {
+  background-color: var(--icp-bright-pink) !important;
+}
+
+/* Custom styling for emoji icons in the screenshot */
+.emoji-crab:before {
+  content: "🦀";
+  color: var(--icp-crab);
+}
+
+.emoji-fire:before {
+  content: "🔥";
+  color: var(--icp-orange);
+}
+
+.emoji-sparkles:before {
+  content: "✨";
+  color: gold;
+}
+
+/* Colored dots in sidebar */
+.dot-li:nth-child(1) div {
+  background-color: #49e9a6 !important;
+}
+.dot-li:nth-child(2) div {
+  background-color: #5dfefe !important;
+}
+.dot-li:nth-child(3) div {
+  background-color: #fdff97 !important;
+}
+.dot-li:nth-child(4) div {
+  background-color: #ff77ff !important;
+}
+.dot-li:nth-child(5) div {
+  background-color: #be95ff !important;
+}
+.dot-li:nth-child(6) div {
+  background-color: #ff9e64 !important;
+}
+.dot-li:nth-child(7) div {
+  background-color: #ff5757 !important;
+}
+
+/* Search box */
+.drac-input-search {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Override for native header divider */
+hr.drac-divider {
+  border-color: #444 !important;
+}
+
+/* Navigation menu button */
+.custom-menu button {
+  background-color: var(--icp-bright-pink) !important;
+  border-color: var(--icp-bright-pink) !important;
+}
