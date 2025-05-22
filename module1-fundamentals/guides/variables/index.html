@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>Variables - Rust Bootcamp with Vibe Coding</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <link rel="canonical" href="https://pt-icp-hub.github.io/ICP-Bootcamp-Vibe-Coding-Beginner/module1-fundamentals/guides/variables/">
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../assets/css/darcula-highlight.min.css">
+
+        <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../../../assets/css/mkdocs.min.css">
+
+        
+            <link  rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+
+    <div class="p-4">
+        
+            <img class="logo" src="../../../assets/logo.png" height="150px">
+        
+
+        <div class="drac-text-center">
+            
+                <span class="drac-text drac-line-height drac-text-white">Rust Bootcamp with Vibe Coding</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Home
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class=" active 
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#core-modules-collapse" aria-expanded="false">
+                    Core Modules
+                </a>
+                <div class="collapse" id="core-modules-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-1:-rust-fundamentals-collapse" aria-expanded="false">
+            Module 1: Rust Fundamentals
+        </a>
+
+        <div class="collapse" id="module-1:-rust-fundamentals-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#guides-collapse" aria-expanded="false">
+            Guides
+        </a>
+
+        <div class="collapse" id="guides-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../getting_started/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Getting Started
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="./"
+            class=" active 
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Variables
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../data_types/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Data Types
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../functions/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Functions
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../control_flow/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Control Flow
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../exercises/01_hello_rust/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Hello Rust
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../exercises/02_variable_basics/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Variable Basics
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../exercises/03_function_workshop/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Function Workshop
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../exercises/04_control_flow_challenge/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Control Flow Challenge
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-2:-memory-management-collapse" aria-expanded="false">
+            Module 2: Memory Management
+        </a>
+
+        <div class="collapse" id="module-2:-memory-management-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#guides-collapse" aria-expanded="false">
+            Guides
+        </a>
+
+        <div class="collapse" id="guides-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/guides/memory_concepts/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Memory Concepts
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/guides/ownership/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Ownership
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/guides/borrowing/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Borrowing
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/guides/slices/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Slices
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/exercises/01_ownership_practice/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Ownership Practice
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/exercises/02_borrowing_challenge/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Borrowing Challenge
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/exercises/03_slice_workshop/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Slice Workshop
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/exercises/04_memory_management_debugging/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Memory Management Debugging
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-3:-data-types-collapse" aria-expanded="false">
+            Module 3: Data Types
+        </a>
+
+        <div class="collapse" id="module-3:-data-types-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module3-data-types/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#guides-collapse" aria-expanded="false">
+            Guides
+        </a>
+
+        <div class="collapse" id="guides-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module3-data-types/guides/structs/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Structs
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module3-data-types/guides/enums/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Enums
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module3-data-types/guides/pattern_matching/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Pattern Matching
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module3-data-types/exercises/01_library_system/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Library System
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module3-data-types/exercises/02_error_handling/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Error Handling
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-4:-code-organization-collapse" aria-expanded="false">
+            Module 4: Code Organization
+        </a>
+
+        <div class="collapse" id="module-4:-code-organization-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module4-code-organization/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module4-code-organization/exercises/01_module_explorer/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Module Explorer
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-5:-collections-collapse" aria-expanded="false">
+            Module 5: Collections
+        </a>
+
+        <div class="collapse" id="module-5:-collections-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module5-collections/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module5-collections/exercises/01_collection_manipulation/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Collection Manipulation
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module5-collections/exercises/final_challenge/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Final Challenge
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-7:-icp-integration-collapse" aria-expanded="false">
+            Module 7: ICP Integration
+        </a>
+
+        <div class="collapse" id="module-7:-icp-integration-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module7-icp-integration/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module7-icp-integration/exercises/01_hello_icp/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Hello ICP
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#optional-modules-collapse" aria-expanded="false">
+                    Optional Modules
+                </a>
+                <div class="collapse" id="optional-modules-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-6:-advanced-concepts-collapse" aria-expanded="false">
+            Module 6: Advanced Concepts
+        </a>
+
+        <div class="collapse" id="module-6:-advanced-concepts-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module6-advanced-concepts/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module6-advanced-concepts/exercises/01_trait_workshop/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Trait Workshop
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <!-- endblock -->
+    </div>
+</nav>
+        <!-- endblock -->
+
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href="../getting_started/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../data_types/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="variables-in-rust">Variables in Rust</h1>
+<h2 id="variable-declaration">Variable Declaration</h2>
+<p>In Rust, variables are immutable by default. You declare a variable using the <code>let</code> keyword:</p>
+<pre><code class="language-rust">fn main() {
+    let x = 5;
+    println!(&quot;The value of x is: {}&quot;, x);
+
+    // This would cause an error
+    // x = 6; // cannot assign twice to immutable variable
+}
+</code></pre>
+<h3 id="mutability">Mutability</h3>
+<p>To make a variable mutable, use the <code>mut</code> keyword:</p>
+<pre><code class="language-rust">fn main() {
+    let mut x = 5;
+    println!(&quot;The value of x is: {}&quot;, x);
+
+    x = 6; // This is valid because x is mutable
+    println!(&quot;The value of x is now: {}&quot;, x);
+}
+</code></pre>
+<h3 id="constants">Constants</h3>
+<p>Constants are values that are bound to a name and cannot change. They're declared using the <code>const</code> keyword:</p>
+<pre><code class="language-rust">fn main() {
+    const MAX_POINTS: u32 = 100_000;
+    println!(&quot;The maximum points is: {}&quot;, MAX_POINTS);
+}
+</code></pre>
+<p>Constants differ from immutable variables in that:</p>
+<ul>
+<li>They must be annotated with a type</li>
+<li>They can be declared in any scope, including the global scope</li>
+<li>They can only be set to a constant expression, not the result of a function call or any other value computed at runtime</li>
+</ul>
+<h3 id="shadowing">Shadowing</h3>
+<p>You can declare a new variable with the same name as a previous variable, effectively "shadowing" the previous variable:</p>
+<pre><code class="language-rust">fn main() {
+    let x = 5;
+
+    let x = x + 1; // This creates a new variable x that shadows the old one
+
+    {
+        let x = x * 2; // This shadows x within this scope
+        println!(&quot;The value of x in the inner scope is: {}&quot;, x); // 12
+    }
+
+    println!(&quot;The value of x is: {}&quot;, x); // 6
+}
+</code></pre>
+<p>Shadowing allows you to change a variable's type while reusing the same name.</p>
+<h3 id="type-annotations">Type Annotations</h3>
+<p>When you want to explicitly specify a variable's type, you can use a type annotation:</p>
+<pre><code class="language-rust">fn main() {
+    // Here the guess variable is expected to be of u32 type
+    let guess: u32 = &quot;42&quot;.parse().expect(&quot;Not a number!&quot;);
+}
+</code></pre>
+<h2 id="working-with-types">Working with Types</h2>
+<p>While a detailed guide on data types is available in a separate document, it's important to understand how variables interact with types in Rust:</p>
+<h3 id="type-inference">Type Inference</h3>
+<p>Rust can often infer what type you want to use based on the value and how you use it:</p>
+<pre><code class="language-rust">fn main() {
+    let x = 5;        // Rust infers this as i32
+    let y = 3.0;      // Rust infers this as f64
+    let active = true; // Rust infers this as bool
+}
+</code></pre>
+<h3 id="using-type-annotations-for-clarity">Using Type Annotations for Clarity</h3>
+<p>Even when Rust can infer the type, you might want to add type annotations for clarity:</p>
+<pre><code class="language-rust">fn main() {
+    let x: i32 = 5;
+    let y: f64 = 3.0;
+    let active: bool = true;
+}
+</code></pre>
+<h3 id="type-annotations-for-disambiguation">Type Annotations for Disambiguation</h3>
+<p>Sometimes Rust needs your help to know which specific type to use:</p>
+<pre><code class="language-rust">fn main() {
+    // Without a type annotation, Rust doesn't know which numeric type to use
+    let guess = &quot;42&quot;.parse().expect(&quot;Not a number!&quot;);  // Error!
+
+    // With a type annotation, Rust knows exactly what to do
+    let guess: u32 = &quot;42&quot;.parse().expect(&quot;Not a number!&quot;);  // Works!
+}
+</code></pre>
+<p>For more information on the various data types available in Rust, please refer to the <a href="../data_types/">Data Types</a> guide.</p></p>
+    </article>
+</section>
+            <!-- endblock -->
+
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
+    </div>
+</footer>
+            <!-- endblock -->
+        </div>
+
+    </main>
+
+        <script>var base_url = '../../..';</script>
+        <script src="../../../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../assets/js/mkdocs.js"></script>
+			<script src="../../../search/main.js" defer></script>
+
+</body>
+
+</html>

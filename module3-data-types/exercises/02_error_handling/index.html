@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>Error Handling - Rust Bootcamp with Vibe Coding</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <link rel="canonical" href="https://pt-icp-hub.github.io/ICP-Bootcamp-Vibe-Coding-Beginner/module3-data-types/exercises/02_error_handling/">
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../assets/css/darcula-highlight.min.css">
+
+        <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../../../assets/css/mkdocs.min.css">
+
+        
+            <link  rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+
+    <div class="p-4">
+        
+            <img class="logo" src="../../../assets/logo.png" height="150px">
+        
+
+        <div class="drac-text-center">
+            
+                <span class="drac-text drac-line-height drac-text-white">Rust Bootcamp with Vibe Coding</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Home
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class=" active 
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#core-modules-collapse" aria-expanded="false">
+                    Core Modules
+                </a>
+                <div class="collapse" id="core-modules-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-1:-rust-fundamentals-collapse" aria-expanded="false">
+            Module 1: Rust Fundamentals
+        </a>
+
+        <div class="collapse" id="module-1:-rust-fundamentals-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#guides-collapse" aria-expanded="false">
+            Guides
+        </a>
+
+        <div class="collapse" id="guides-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/guides/getting_started/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Getting Started
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/guides/variables/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Variables
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/guides/data_types/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Data Types
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/guides/functions/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Functions
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/guides/control_flow/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Control Flow
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/exercises/01_hello_rust/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Hello Rust
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/exercises/02_variable_basics/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Variable Basics
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/exercises/03_function_workshop/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Function Workshop
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/exercises/04_control_flow_challenge/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Control Flow Challenge
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-2:-memory-management-collapse" aria-expanded="false">
+            Module 2: Memory Management
+        </a>
+
+        <div class="collapse" id="module-2:-memory-management-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#guides-collapse" aria-expanded="false">
+            Guides
+        </a>
+
+        <div class="collapse" id="guides-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/guides/memory_concepts/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Memory Concepts
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/guides/ownership/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Ownership
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/guides/borrowing/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Borrowing
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/guides/slices/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Slices
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/exercises/01_ownership_practice/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Ownership Practice
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/exercises/02_borrowing_challenge/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Borrowing Challenge
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/exercises/03_slice_workshop/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Slice Workshop
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/exercises/04_memory_management_debugging/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Memory Management Debugging
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-3:-data-types-collapse" aria-expanded="false">
+            Module 3: Data Types
+        </a>
+
+        <div class="collapse" id="module-3:-data-types-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#guides-collapse" aria-expanded="false">
+            Guides
+        </a>
+
+        <div class="collapse" id="guides-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../guides/structs/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Structs
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../guides/enums/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Enums
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../guides/pattern_matching/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Pattern Matching
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../01_library_system/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Library System
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="./"
+            class=" active 
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Error Handling
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-4:-code-organization-collapse" aria-expanded="false">
+            Module 4: Code Organization
+        </a>
+
+        <div class="collapse" id="module-4:-code-organization-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module4-code-organization/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module4-code-organization/exercises/01_module_explorer/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Module Explorer
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-5:-collections-collapse" aria-expanded="false">
+            Module 5: Collections
+        </a>
+
+        <div class="collapse" id="module-5:-collections-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module5-collections/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module5-collections/exercises/01_collection_manipulation/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Collection Manipulation
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module5-collections/exercises/final_challenge/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Final Challenge
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-7:-icp-integration-collapse" aria-expanded="false">
+            Module 7: ICP Integration
+        </a>
+
+        <div class="collapse" id="module-7:-icp-integration-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module7-icp-integration/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module7-icp-integration/exercises/01_hello_icp/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Hello ICP
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#optional-modules-collapse" aria-expanded="false">
+                    Optional Modules
+                </a>
+                <div class="collapse" id="optional-modules-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-6:-advanced-concepts-collapse" aria-expanded="false">
+            Module 6: Advanced Concepts
+        </a>
+
+        <div class="collapse" id="module-6:-advanced-concepts-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module6-advanced-concepts/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module6-advanced-concepts/exercises/01_trait_workshop/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Trait Workshop
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <!-- endblock -->
+    </div>
+</nav>
+        <!-- endblock -->
+
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href="../01_library_system/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../../../module4-code-organization/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="exercise-2-error-handling-workshop">Exercise 2: Error Handling Workshop</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>Write a Rust program that demonstrates effective error handling by:</p>
+<ol>
+<li>Creating a function that parses user configuration from a string and returns a <code>Result</code> type</li>
+<li>Implementing a function that safely converts a string to an integer using the <code>Option</code> type</li>
+<li>Developing a data validation system with custom error types</li>
+<li>Building a function chain that propagates errors using the <code>?</code> operator</li>
+</ol>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Understand when and how to use <code>Option&lt;T&gt;</code> and <code>Result&lt;T, E&gt;</code> types</li>
+<li>Learn to handle errors in a clean, idiomatic way using Rust's error handling patterns</li>
+<li>Practice defining and working with custom error types</li>
+<li>Become comfortable with error propagation techniques</li>
+</ul>
+<h2 id="starter-code">Starter Code</h2>
+<pre><code class="language-rust">use std::num::ParseIntError;
+use std::fmt;
+
+// Part 1: Configuration Parser
+// Create a configuration struct and parser that returns Results
+
+// Config struct - already defined
+#[derive(Debug)]
+struct Config {
+    username: String,
+    timeout: u32,
+    max_retries: u32,
+}
+
+// Custom error type for configuration parsing errors - already defined with variants
+#[derive(Debug)]
+enum ConfigError {
+    MissingField(String),
+    InvalidTimeout(String),
+    InvalidRetryCount(String),
+}
+
+// Display implementation for ConfigError - just needs message content
+impl fmt::Display for ConfigError {
+    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+        match self {
+            ConfigError::MissingField(field) =&gt; write!(f, &quot;Missing required field: {}&quot;, field),
+            ConfigError::InvalidTimeout(val) =&gt; write!(f, &quot;Invalid timeout value: {}&quot;, val),
+            ConfigError::InvalidRetryCount(val) =&gt; write!(f, &quot;Invalid retry count: {}&quot;, val),
+        }
+    }
+}
+
+// Parse configuration string function - implementation needed
+fn parse_config(config_str: &amp;str) -&gt; Result&lt;Config, ConfigError&gt; {
+    let mut username = None;
+    let mut timeout = None;
+    let mut max_retries = None;
+
+    // Split the configuration string by commas and process each key-value pair
+    for pair in config_str.split(',') {
+        let parts: Vec&lt;&amp;str&gt; = pair.split('=').collect();
+        if parts.len() != 2 {
+            continue; // Skip invalid pairs
+        }
+
+        let key = parts[0].trim();
+        let value = parts[1].trim();
+
+        match key {
+            &quot;username&quot; =&gt; username = Some(value.to_string()),
+            &quot;timeout&quot; =&gt; {
+                match value.parse::&lt;u32&gt;() {
+                    Ok(val) =&gt; timeout = Some(val),
+                    Err(_) =&gt; return Err(ConfigError::InvalidTimeout(value.to_string())),
+                }
+            },
+            &quot;max_retries&quot; =&gt; {
+                match value.parse::&lt;u32&gt;() {
+                    Ok(val) =&gt; max_retries = Some(val),
+                    Err(_) =&gt; return Err(ConfigError::InvalidRetryCount(value.to_string())),
+                }
+            },
+            _ =&gt; {} // Ignore unknown keys
+        }
+    }
+
+    let username = username.ok_or(ConfigError::MissingField(&quot;username&quot;.to_string()))?;
+    let timeout = timeout.ok_or(ConfigError::MissingField(&quot;timeout&quot;.to_string()))?;
+    let max_retries = max_retries.ok_or(ConfigError::MissingField(&quot;max_retries&quot;.to_string()))?;
+
+    Ok(Config {
+        username,
+        timeout,
+        max_retries,
+    })
+}
+
+// Part 2: Safe String to Integer Conversion
+// Create a function that safely converts a string to an integer
+
+fn parse_number(s: &amp;str) -&gt; Option&lt;i32&gt; {
+    match s.parse::&lt;i32&gt;() {
+        Ok(number) =&gt; Some(number),
+        Err(_) =&gt; None,
+    }
+}
+
+// Part 3: Data Validation with Custom Errors
+// Implement a user data validator with multiple error types
+
+// User struct - already defined
+#[derive(Debug)]
+struct User {
+    id: u32,
+    name: String,
+    age: u32,
+}
+
+// ValidationError enum - already defined with variants
+#[derive(Debug)]
+enum ValidationError {
+    InvalidId,
+    NameTooShort,
+    InvalidAge,
+}
+
+// Display implementation for ValidationError
+impl fmt::Display for ValidationError {
+    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+        match self {
+            ValidationError::InvalidId =&gt; write!(f, /* TODO */),
+            ValidationError::NameTooShort =&gt; write!(f, /* TODO */),
+            ValidationError::InvalidAge =&gt; write!(f, /* TODO */),
+        }
+    }
+}
+
+// Validate user function - partially implemented
+fn validate_user(user: &amp;User) -&gt; Result&lt;(), ValidationError&gt; {
+    // Check ID validity
+    if user.id == 0 {
+        return /* TODO */;
+    }
+
+    if user.name.len() &lt; 2 {
+        return /* TODO */;
+    }
+
+    if user.age &lt; 18 {
+        return /* TODO */;
+    }
+
+    Ok(())
+}
+
+// Part 4: Error Propagation Chain
+// Create a series of functions that use the ? operator to propagate errors
+
+// ProcessError type
+#[derive(Debug)]
+enum ProcessError {
+    ConfigError(ConfigError),
+    ParseError(ParseIntError),
+    ValidationError(ValidationError),
+}
+
+// From implementations for automatic conversions
+impl From&lt;ConfigError&gt; for ProcessError {
+    fn from(err: ConfigError) -&gt; Self {
+        ProcessError::ConfigError(err)
+    }
+}
+
+impl From&lt;ParseIntError&gt; for ProcessError {
+    fn from(err: ParseIntError) -&gt; Self {
+        ProcessError::ParseError(err)
+    }
+}
+
+impl From&lt;ValidationError&gt; for ProcessError {
+    fn from(err: ValidationError) -&gt; Self {
+        ProcessError::ValidationError(err)
+    }
+}
+
+impl fmt::Display for ProcessError {
+    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+        match self {
+            ProcessError::ConfigError(e) =&gt; write!(f, &quot;Configuration error: {}&quot;, e),
+            ProcessError::ParseError(e) =&gt; write!(f, &quot;Parse error: {}&quot;, e),
+            ProcessError::ValidationError(e) =&gt; write!(f, &quot;Validation error: {}&quot;, e),
+        }
+    }
+}
+
+// Process data function - needs implementation with ? operator
+fn process_data(config_str: &amp;str, user_id: &amp;str, user_name: &amp;str, user_age: &amp;str) -&gt; Result&lt;(), ProcessError&gt; {
+    let config = parse_config(config_str)?;
+
+    let id: u32 = user_id.parse()?;
+    let age: u32 = user_age.parse()?;
+
+    let user = User {
+        id,
+        name: user_name.to_string(),
+        age,
+    };
+
+    validate_user(&amp;user)?;
+
+    Ok(())
+}
+
+fn main() {
+    // Part 1: Test the configuration parser
+    println!(&quot;--- Part 1: Configuration Parser ---&quot;);
+    let config_str = &quot;username=alice,timeout=30,max_retries=5&quot;;
+    match parse_config(config_str) {
+        Ok(config) =&gt; println!(&quot;Config parsed successfully: {:?}&quot;, config),
+        Err(e) =&gt; println!(&quot;Failed to parse config: {}&quot;, e),
+    }
+
+    let invalid_config = &quot;username=bob,timeout=invalid,max_retries=5&quot;;
+    match parse_config(invalid_config) {
+        Ok(config) =&gt; println!(&quot;Config parsed successfully: {:?}&quot;, config),
+        Err(e) =&gt; println!(&quot;Failed to parse config: {}&quot;, e),
+    }
+
+    // Part 2: Test the string to integer conversion
+    println!(&quot;\n--- Part 2: String to Integer Conversion ---&quot;);
+    let valid_number = &quot;42&quot;;
+    let invalid_number = &quot;four&quot;;
+
+    match parse_number(valid_number) {
+        Some(num) =&gt; println!(&quot;Successfully parsed '{}' to {}&quot;, valid_number, num),
+        None =&gt; println!(&quot;Failed to parse '{}'&quot;, valid_number),
+    }
+
+    match parse_number(invalid_number) {
+        Some(num) =&gt; println!(&quot;Successfully parsed '{}' to {}&quot;, invalid_number, num),
+        None =&gt; println!(&quot;Failed to parse '{}'&quot;, invalid_number),
+    }
+
+    // Part 3: Test the user validation
+    println!(&quot;\n--- Part 3: User Validation ---&quot;);
+    // Create and test valid and invalid users
+    let valid_user = User {
+        id: 1001,
+        name: String::from(&quot;Charlie&quot;),
+        age: 25,
+    };
+
+    let invalid_user1 = User {
+        id: 1002,
+        name: String::from(&quot;D&quot;), // Too short
+        age: 30,
+    };
+
+    let invalid_user2 = User {
+        id: 1003,
+        name: String::from(&quot;Eve&quot;),
+        age: 17, // Too young
+    };
+
+    println!(&quot;Validating user: {:?}&quot;, valid_user);
+    match validate_user(&amp;valid_user) {
+        Ok(()) =&gt; println!(&quot;User is valid&quot;),
+        Err(e) =&gt; println!(&quot;Validation error: {}&quot;, e),
+    }
+
+    println!(&quot;Validating user: {:?}&quot;, invalid_user1);
+    match validate_user(&amp;invalid_user1) {
+        Ok(()) =&gt; println!(&quot;User is valid&quot;),
+        Err(e) =&gt; println!(&quot;Validation error: {}&quot;, e),
+    }
+
+    println!(&quot;Validating user: {:?}&quot;, invalid_user2);
+    match validate_user(&amp;invalid_user2) {
+        Ok(()) =&gt; println!(&quot;User is valid&quot;),
+        Err(e) =&gt; println!(&quot;Validation error: {}&quot;, e),
+    }
+
+    // Part 4: Test the error propagation chain
+    println!(&quot;\n--- Part 4: Error Propagation ---&quot;);
+    let test_cases = [
+        (&quot;username=charlie,timeout=30,max_retries=5&quot;, &quot;1001&quot;, &quot;Charlie&quot;, &quot;25&quot;),
+        (&quot;username=diana,timeout=invalid,max_retries=5&quot;, &quot;1002&quot;, &quot;Diana&quot;, &quot;30&quot;),
+        (&quot;username=eve,timeout=30,max_retries=5&quot;, &quot;invalid_id&quot;, &quot;Eve&quot;, &quot;22&quot;),
+        (&quot;username=frank,timeout=30,max_retries=5&quot;, &quot;1004&quot;, &quot;F&quot;, &quot;17&quot;), // Invalid name (too short)
+    ];
+
+    for (config, id, name, age) in test_cases.iter() {
+        println!(&quot;Processing: Config='{}', ID='{}', Name='{}', Age='{}'&quot;, config, id, name, age);
+        match process_data(config, id, name, age) {
+            Ok(()) =&gt; println!(&quot;  Success: Data processed successfully&quot;),
+            Err(e) =&gt; println!(&quot;  Error: {}&quot;, e),
+        }
+    }
+}
+</code></pre>
+<h2 id="how-to-run-your-code">How to Run Your Code</h2>
+<ol>
+<li>First, modify the starter code in <code>02_error_handling_starter.rs</code> according to the requirements</li>
+<li>Run your code from the bootcamp root directory with:
+   <code>cargo run --bin module3_02</code></li>
+</ol>
+<h2 id="expected-output">Expected Output</h2>
+<p>After correctly implementing all parts, your program should produce output similar to:</p>
+<pre><code>--- Part 1: Configuration Parser ---
+Config parsed successfully: Config { username: &quot;alice&quot;, timeout: 30, max_retries: 5 }
+Failed to parse config: Invalid timeout value: invalid
+
+--- Part 2: String to Integer Conversion ---
+Successfully parsed '42' to 42
+Failed to parse 'four'
+
+--- Part 3: User Validation ---
+Validating user: User { id: 1001, name: &quot;Charlie&quot;, age: 25 }
+User is valid
+Validating user: User { id: 1002, name: &quot;D&quot;, age: 30 }
+Validation error: Name too short, minimum length is 2 characters
+Validating user: User { id: 1003, name: &quot;Eve&quot;, age: 17 }
+Validation error: Age must be at least 18
+
+--- Part 4: Error Propagation ---
+Processing: Config='username=charlie,timeout=30,max_retries=5', ID='1001', Name='Charlie', Age='25'
+  Success: Data processed successfully
+Processing: Config='username=diana,timeout=invalid,max_retries=5', ID='1002', Name='Diana', Age='30'
+  Error: Configuration error: Invalid timeout value: invalid
+Processing: Config='username=eve,timeout=30,max_retries=5', ID='invalid_id', Name='Eve', Age='22'
+  Error: Parse error: invalid digit found in string
+Processing: Config='username=frank,timeout=30,max_retries=5', ID='1004', Name='F', Age='17'
+  Error: Validation error: Name too short, minimum length is 2 characters
+</code></pre>
+<h2 id="tips">Tips</h2>
+<ul>
+<li>Use <code>match</code> expressions to handle <code>Option</code> and <code>Result</code> types</li>
+<li>Remember that the <code>Display</code> trait is used to format error messages for end users</li>
+<li>The <code>?</code> operator can be used to automatically propagate errors in functions that return <code>Result</code></li>
+<li>Use the <code>parse</code> method to convert strings to numbers, which returns a <code>Result</code></li>
+<li>The <code>From</code> trait is used for automatic conversions between error types when using the <code>?</code> operator</li>
+</ul></p>
+    </article>
+</section>
+            <!-- endblock -->
+
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
+    </div>
+</footer>
+            <!-- endblock -->
+        </div>
+
+    </main>
+
+        <script>var base_url = '../../..';</script>
+        <script src="../../../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../assets/js/mkdocs.js"></script>
+			<script src="../../../search/main.js" defer></script>
+
+</body>
+
+</html>

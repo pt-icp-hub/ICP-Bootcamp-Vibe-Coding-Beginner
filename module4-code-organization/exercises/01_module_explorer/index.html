@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>Module Explorer - Rust Bootcamp with Vibe Coding</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <link rel="canonical" href="https://pt-icp-hub.github.io/ICP-Bootcamp-Vibe-Coding-Beginner/module4-code-organization/exercises/01_module_explorer/">
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../assets/css/darcula-highlight.min.css">
+
+        <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../../../assets/css/mkdocs.min.css">
+
+        
+            <link  rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+
+    <div class="p-4">
+        
+            <img class="logo" src="../../../assets/logo.png" height="150px">
+        
+
+        <div class="drac-text-center">
+            
+                <span class="drac-text drac-line-height drac-text-white">Rust Bootcamp with Vibe Coding</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Home
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class=" active 
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#core-modules-collapse" aria-expanded="false">
+                    Core Modules
+                </a>
+                <div class="collapse" id="core-modules-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-1:-rust-fundamentals-collapse" aria-expanded="false">
+            Module 1: Rust Fundamentals
+        </a>
+
+        <div class="collapse" id="module-1:-rust-fundamentals-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#guides-collapse" aria-expanded="false">
+            Guides
+        </a>
+
+        <div class="collapse" id="guides-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/guides/getting_started/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Getting Started
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/guides/variables/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Variables
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/guides/data_types/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Data Types
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/guides/functions/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Functions
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/guides/control_flow/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Control Flow
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/exercises/01_hello_rust/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Hello Rust
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/exercises/02_variable_basics/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Variable Basics
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/exercises/03_function_workshop/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Function Workshop
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module1-fundamentals/exercises/04_control_flow_challenge/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Control Flow Challenge
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-2:-memory-management-collapse" aria-expanded="false">
+            Module 2: Memory Management
+        </a>
+
+        <div class="collapse" id="module-2:-memory-management-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#guides-collapse" aria-expanded="false">
+            Guides
+        </a>
+
+        <div class="collapse" id="guides-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/guides/memory_concepts/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Memory Concepts
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/guides/ownership/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Ownership
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/guides/borrowing/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Borrowing
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/guides/slices/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Slices
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/exercises/01_ownership_practice/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Ownership Practice
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/exercises/02_borrowing_challenge/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Borrowing Challenge
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/exercises/03_slice_workshop/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Slice Workshop
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module2-memory-management/exercises/04_memory_management_debugging/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Memory Management Debugging
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-3:-data-types-collapse" aria-expanded="false">
+            Module 3: Data Types
+        </a>
+
+        <div class="collapse" id="module-3:-data-types-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module3-data-types/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#guides-collapse" aria-expanded="false">
+            Guides
+        </a>
+
+        <div class="collapse" id="guides-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module3-data-types/guides/structs/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Structs
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module3-data-types/guides/enums/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Enums
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module3-data-types/guides/pattern_matching/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Pattern Matching
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module3-data-types/exercises/01_library_system/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Library System
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module3-data-types/exercises/02_error_handling/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Error Handling
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-4:-code-organization-collapse" aria-expanded="false">
+            Module 4: Code Organization
+        </a>
+
+        <div class="collapse" id="module-4:-code-organization-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="./"
+            class=" active 
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Module Explorer
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-5:-collections-collapse" aria-expanded="false">
+            Module 5: Collections
+        </a>
+
+        <div class="collapse" id="module-5:-collections-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module5-collections/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module5-collections/exercises/01_collection_manipulation/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Collection Manipulation
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module5-collections/exercises/final_challenge/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Final Challenge
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-7:-icp-integration-collapse" aria-expanded="false">
+            Module 7: ICP Integration
+        </a>
+
+        <div class="collapse" id="module-7:-icp-integration-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module7-icp-integration/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module7-icp-integration/exercises/01_hello_icp/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Hello ICP
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#optional-modules-collapse" aria-expanded="false">
+                    Optional Modules
+                </a>
+                <div class="collapse" id="optional-modules-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#module-6:-advanced-concepts-collapse" aria-expanded="false">
+            Module 6: Advanced Concepts
+        </a>
+
+        <div class="collapse" id="module-6:-advanced-concepts-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module6-advanced-concepts/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Overview
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#exercises-collapse" aria-expanded="false">
+            Exercises
+        </a>
+
+        <div class="collapse" id="exercises-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../module6-advanced-concepts/exercises/01_trait_workshop/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Trait Workshop
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <!-- endblock -->
+    </div>
+</nav>
+        <!-- endblock -->
+
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href="../../"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../../../module5-collections/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="exercise-1-module-explorer">Exercise 1: Module Explorer</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>Create a multi-module Rust project that models a simple e-commerce system with proper code organization. The project should include modules for products, users, orders, and inventory management.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Practice organizing code using modules and submodules</li>
+<li>Implement proper visibility controls using <code>pub</code> and <code>pub(crate)</code></li>
+<li>Use the <code>use</code> statement to bring items into scope</li>
+<li>Create a clean API between modules</li>
+</ul>
+<h2 id="starter-code">Starter Code</h2>
+<pre><code class="language-rust">// src/main.rs or lib.rs
+
+// TODO: Define your module structure here
+// Hint: You'll need to create modules for products, users, orders, and inventory
+
+fn main() {
+    // TODO: Use your modules to create a simple e-commerce workflow:
+    // 1. Create some products
+    // 2. Add products to inventory
+    // 3. Create a user
+    // 4. Create an order for the user with some products
+    // 5. Print order details
+}
+</code></pre>
+<h2 id="how-to-run-your-code">How to Run Your Code</h2>
+<ol>
+<li>First, modify the starter code in <code>01_module_explorer_starter.rs</code> to fix the ownership issues</li>
+<li>Run your code from the bootcamp root directory with:
+   <code>cargo run --bin module4_01</code></li>
+</ol>
+<h2 id="expected-structure">Expected Structure</h2>
+<p>Your project should have a module structure similar to this:</p>
+<pre><code>src/
+├── main.rs (or lib.rs)
+├── product.rs
+├── user.rs
+├── order.rs
+└── inventory.rs
+</code></pre>
+<p>Each module should define appropriate types and functions with proper visibility modifiers.</p>
+<h2 id="requirements">Requirements</h2>
+<ol>
+<li>
+<p><strong>Product Module</strong></p>
+</li>
+<li>
+<p>Define a <code>Product</code> struct with fields for id, name, price, and description</p>
+</li>
+<li>
+<p>Implement methods for creating and displaying products</p>
+</li>
+<li>
+<p><strong>User Module</strong></p>
+</li>
+<li>
+<p>Define a <code>User</code> struct with fields for id, name, email, and address</p>
+</li>
+<li>
+<p>Implement methods for creating and displaying users</p>
+</li>
+<li>
+<p><strong>Order Module</strong></p>
+</li>
+<li>
+<p>Define an <code>Order</code> struct that associates users with purchased products</p>
+</li>
+<li>Include order status using an enum</li>
+<li>
+<p>Implement methods for creating, updating, and displaying orders</p>
+</li>
+<li>
+<p><strong>Inventory Module</strong></p>
+</li>
+<li>Define functions to add, remove, and check stock of products</li>
+<li>Track product quantities</li>
+</ol>
+<h2 id="tips">Tips</h2>
+<ul>
+<li>Think carefully about which items should be public and which should be private</li>
+<li>Consider using submodules for related functionality</li>
+<li>Remember that you can use <code>pub(crate)</code> to restrict visibility to the current crate</li>
+<li>Use proper paths when referring to items in other modules</li>
+</ul></p>
+    </article>
+</section>
+            <!-- endblock -->
+
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
+    </div>
+</footer>
+            <!-- endblock -->
+        </div>
+
+    </main>
+
+        <script>var base_url = '../../..';</script>
+        <script src="../../../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../assets/js/mkdocs.js"></script>
+			<script src="../../../search/main.js" defer></script>
+
+</body>
+
+</html>
